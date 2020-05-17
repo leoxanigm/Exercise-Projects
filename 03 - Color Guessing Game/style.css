@@ -1,5 +1,7 @@
 body {
+  font-family: 'Verdana', sans-serif;
   background: #232323;
+  margin: 0;
 }
 #container {
   margin: 0 auto;
@@ -8,6 +10,16 @@ body {
 h1 {
   color: #fff;
   text-shadow: 0px 0px 4px #bbb;
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: steelblue;
+  margin: 0;
+}
+h1 span {
+  display: block;
+  font-size: 1.5em;
 }
 .square {
   width: 30%;
@@ -15,10 +27,40 @@ h1 {
   padding-bottom: 30%;
   float: left;
   margin: 1.6%;
+  border-radius: 12px;
+  transition: background 500ms;
 }
 #stripe {
   color: #000;
   background: #fff;
   height: 30px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.selected {
+  background-color: steelblue;
+  color: #fff;
+}
+button {
+  color: steelblue;
+  font-family: inherit;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  background: none;
+  height: 100%;
+  cursor: pointer;
+  transition: background 200ms;
+}
+button:hover {
+  color: white;
+  background-color: steelblue;
+}
+#message {
+  font-size: 16px;
+  display: inline-block;
+  min-width: 80px;
 }
