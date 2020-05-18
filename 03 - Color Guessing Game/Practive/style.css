@@ -1,0 +1,40 @@
+body {
+  background: #323232;
+}
+header {
+  color: #fff;
+  background-color: teal;
+  text-transform: uppercase;
+}
+header span {
+  font-size: 3.5rem;
+}
+button {
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+button.active {
+  color: teal;
+}
+button:hover {
+  color: #fff;
+  background-color: teal;
+}
+.block {
+  background: teal;
+  height: 180px;
+  width: 180px;
+  max-width: 100%;
+  flex: revert;
+  border-radius: 12px;
+}
+.blocks .row {
+  max-width: 600px;
+}
+.message-container {
+  text-align: right;
+}
