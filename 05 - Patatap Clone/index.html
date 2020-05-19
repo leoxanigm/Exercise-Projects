@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/lib/paper-full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+      var circles = [];
+
+      function onKeyDown(e) {
+
+        if ( !keyData[e.key] ) return false;
+
+        var sound = keyData[e.key].sound;
+        sound.play();
+        var maxPt = new Point( view.size.width, view.size.height );
+        var ranPt = Point.random();
+        var myPt = maxPt * ranPt;
+        var newCircle = new Path.Circle(myPt, 200);
+        newCircle.fillColor = keyData[e.key].color;
+        circles.push(newCircle);
+      }
+
+      function onFrame(e) {
+        if ( circles[0] ) {
+          for ( var i = 0; i < circles.length; i++) {
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(.9);
+            if ( circles[i].area < 1 ) {
+              circles[i].remove();
+              circles.splice(i, 1);
+              console.log(circles);
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
